@@ -20,15 +20,12 @@ myCanvas.addEventListener('mousemove',
    }
 );
 
-/*
-let img=new Image();
-document.getElementById('theImg_1').(
-    function(){
-        img.src=this.src;
-    }
-);
-*/
-ctx.drawImage(img,50,50);
+let theImg=document.getElementById('theImg_1');
+theImg.onload=function(){
+        ctx.drawImage(theImg,50,50,theImg.width,theImg.height);
+};
+
+
 
 
  let x=0;
@@ -52,7 +49,7 @@ ctx.drawImage(img,50,50);
         console.log('hit top bottom boundary!');
         console.log(x,y);
         dy=-dy;
-        //x +=dx;
+        y +=dy;
     }
     
     x +=dx;
